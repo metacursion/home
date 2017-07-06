@@ -1,0 +1,33 @@
+<video controls="true" autoplay="true" muted="true" loop="true">
+  <source type="video/mp4" src="https://storage.googleapis.com/meteo-outputs/temp.mp4">
+</video>
+<p class="controls">
+  <label><input type="range" step="0.0001" min="0.0001" max="0.2" value="0.05" id="rateSlider"></label>
+  <span id="rateOutput" aria-live="polite"></span>
+</p>
+<script>
+  (function () {
+    'use strict';
+    var video = document.getElementsByTagName("video")[0];
+    var rateOutput = document.getElementById('rateOutput');
+    var rateSlider = document.getElementById('rateSlider');
+    rateSlider.onchange = function (event) {
+      video.playbackRate = rateSlider.value;
+    };
+    video.onplay = function (event) {
+      video.playbackRate = rateSlider.value;
+    };
+    video.onratechange = function (event) {
+      rateOutput.textContent = video.playbackRate;
+    };
+    rateOutput.textContent = rateSlider.value;
+  })();
+</script>
+<br/>
+<br/>
+<a href='vejas'> vejas </a> 
+<a href='gusiai'> gusiai </a> 
+<a href='temp'> temperatura </a> 
+<a href='lietus'> lietus </a> 
+<a href='matomumas'> matomumas </a> 
+<a href='debesys'> debesys </a> 
