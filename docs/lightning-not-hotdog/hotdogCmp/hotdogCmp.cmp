@@ -1,0 +1,35 @@
+<aura:component >
+  <aura:attribute name="FilesList" type="Object"/>
+  <aura:attribute name="result" type="string"/>
+  <aura:attribute name="image" type="string"/>
+  <div
+    style="text-align:center;
+  text-align: center;
+text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+color: yellow;
+font: 700 80px 'Bitter';">
+    <aura:if isTrue="{! v.result == 'hotdog' }">
+      <div style="background-color: #29ff07;">
+        HOTDOG!
+      </div>
+      <aura:set attribute="else">
+        <aura:if isTrue="{! v.result == 'not hotdog' }">
+          <div style="
+         background-color: #e4001c;">
+            NOT HOTDOG!
+          </div>
+        </aura:if>
+      </aura:set>
+    </aura:if>
+  </div>
+  <img src="{!v.image}"/>
+  <lightning:input
+    type="file"
+    label="Attachment"
+    variant="label-hidden"
+    name="file"
+    files="{!v.FilesList}"
+    multiple="true"
+    accept="image/jpg, image/png"
+    onchange="{! c.handleFilesChange }"/>
+</aura:component>
