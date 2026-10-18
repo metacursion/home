@@ -49,7 +49,12 @@
       -webkit-font-smoothing: antialiased;
     }
     main {
-      max-width: 44rem;
+      max-width: 34rem;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       margin: 0 auto;
       padding: clamp(1.25rem, 5vw, 4rem) clamp(1rem, 4vw, 1.5rem);
     }
@@ -76,14 +81,9 @@
     ul { margin: 0; padding-left: 1.2rem; }
     li { margin: .2rem 0; }
     li::marker { color: var(--muted); }
-    .work { list-style: none; padding: 0; }
-    .work li { padding: .55rem 0; border-top: 1px solid var(--border); margin: 0; }
-    .work li:first-child { border-top: 0; }
-    .work .desc { display: block; color: var(--muted); font-size: .95rem; }
     a { color: var(--accent); text-decoration: none; text-underline-offset: 2px; }
     a:hover, a:focus-visible { text-decoration: underline; }
     a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
-    strong { font-weight: 600; }
     .contact {
       display: inline-block;
       margin-top: .25rem;
@@ -94,11 +94,9 @@
       font-weight: 600;
     }
     .contact:hover, .contact:focus-visible { text-decoration: none; filter: brightness(1.08); }
-    footer { margin-top: 1.25rem; text-align: center; color: var(--muted); font-size: .85rem; }
     @media print {
       body { background: none; }
       .card { box-shadow: none; border: 0; }
-      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; color: var(--muted); }
     }
   </style>
 </head>
@@ -123,30 +121,6 @@
       <ul>
         <li>Salesforce consulting</li>
         <li>Google Cloud consulting</li>
-      </ul>
-
-      <h2>Work</h2>
-      <ul class="work">
-        <li><a href="https://github.com/metacursion/lightning-translate"><strong>Lightning Translate</strong></a></li>
-        <li><a href="https://aminosplore.metacursion.com/"><strong>Aminosplore</strong></a></li>
-        <li><a href="https://metacursion.com/lightning-not-hotdog/"><strong>Lightning Not-Hotdog</strong></a>
-          <span class="desc">The original Lightning Not-Hotdog</span></li>
-        <li><a href="https://podlog.metacursion.com/"><strong>Podlog</strong></a>
-          <span class="desc">Tracks Salesforce instances’ versions</span></li>
-        <li><a href="https://github.com/metacursion/CustomMetadataClientSync"><strong>CustomMetadataClientSync</strong></a>
-          <span class="desc">Synchronous Custom Metadata Types service for Lightning components</span></li>
-        <li><a href="https://github.com/metacursion/CSPService"><strong>CSPService</strong></a>
-          <span class="desc">Tiny service for manipulating CSP settings and records from Lightning</span></li>
-        <li><a href="https://github.com/metacursion/gravalax"><strong>gravalax</strong></a>
-          <span class="desc">Generates promisified Lightning stubs from your Apex classes</span></li>
-        <li><a href="https://github.com/metacursion/Httpex"><strong>Httpex</strong></a>
-          <span class="desc">A little framework fork that helps to call HTTP endpoints with a couple of auth options</span></li>
-        <li><strong>HttpSin</strong>
-          <span class="desc">Work-in-progress framework for calling HTTP from Lightning via Apex (utilising Httpex and sfdc-lax)</span></li>
-        <li><a href="https://sjurgis.github.io/lightning-hacker-news/"><strong>Lightning Hacker News</strong></a> · <a href="https://lhn.metacursion.com/">Demo</a>
-          <span class="desc">In less than 99 lines of code</span></li>
-        <li><a href="https://www.facebook.com/Metacursion/videos/128143094444590/"><strong>Bi-Directional Google Cloud Pub/Sub with platform events</strong></a>
-          <span class="desc">Video · contact <a href="mailto:info@metacursion.com">info@metacursion.com</a> for a demo</span></li>
       </ul>
 
       <h2>Contact</h2>
