@@ -1,69 +1,131 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-@viewport {
-  width: device-width;
-}
-@media only screen and (max-width: 480px) {
-  .main {
-    font-size: 1.2em !important;
-    margin-left: 10px !important;
-  }
-}
-@charset "UTF-8";header{display:block}a{background-color:transparent;color:#0070d2;text-decoration:none;transition:color .1s linear;cursor:pointer}a:active,a:hover{outline:0}img{border:0;vertical-align:middle;max-width:100%;height:auto}*,:after,:before{box-sizing:border-box}::-webkit-input-placeholder{color:#54698d;font-weight:400;font-size:.8125rem}:-ms-input-placeholder{color:#54698d;font-weight:400;font-size:.8125rem}::placeholder{color:#54698d;font-weight:400;font-size:.8125rem}::-moz-selection{background:#d8edff;text-shadow:none;color:#16325c}::selection{background:#d8edff;text-shadow:none;color:#16325c}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:"Salesforce Sans",Arial,sans-serif;font-size:100%;line-height:1.5;background:#fdfdfd;color:#16325c;-webkit-tap-highlight-color:transparent}body{margin:0;font-size:.8125rem;background:0 0}a:focus,a:hover{text-decoration:underline;color:#005fb2}a:active{color:#00396b}.slds-global-header_container{position:fixed;width:100%;top:0;left:0;z-index:100}.slds-global-header{background:#fdfdfd;box-shadow:0 2px 4px rgba(0,0,0,.07);padding:.5rem 0;height:3.125rem;-ms-flex-align:center;align-items:center}.slds-global-header__item{padding:0 1rem}.slds-global-header__logo{-ms-flex-negative:0;flex-shrink:0;width:2.8125rem}.slds-global-header__button--icon:hover:not(:disabled),.slds-global-header__button_icon:hover:not(:disabled){color:#005fb2}.slds-global-header__button--icon:hover:not(:disabled) .slds-icon,.slds-global-header__button_icon:hover:not(:disabled) .slds-icon{fill:#005fb2}.slds-visual-picker input:not(:disabled)~label:hover .slds-visual-picker__figure{cursor:pointer;outline:0;border:1px solid #1589ee;box-shadow:0 0 0 1px #1589ee inset}.slds-grid{display:-ms-flexbox;display:flex}.slds-wrap{-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:start;align-items:flex-start}.slds-grid_align-spread{-ms-flex-pack:justify;justify-content:space-between}.slds-container--small{max-width:30rem}.slds-container--large{max-width:64rem}.slds-container--center{margin-left:auto;margin-right:auto}.slds-p-top_medium{padding-top:1rem}.slds-p-right_medium{padding-right:1rem}.slds-p-top_xx-large{padding-top:3rem} @media print{*,:after,:before{background:0 0!important;color:#000!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}img{page-break-inside:avoid;max-width:100%!important}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metacursion — Salesforce &amp; Google Cloud consulting</title>
+  <meta name="description" content="Metacursion remotely develops advanced Lightning components and domain driven Apex, and offers Salesforce and Google Cloud consulting. Based in Auckland, New Zealand.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://metacursion.com/">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Metacursion">
+  <meta property="og:title" content="Metacursion — Salesforce &amp; Google Cloud consulting">
+  <meta property="og:description" content="Advanced Lightning components, domain driven Apex, Salesforce and Google Cloud consulting. Auckland, New Zealand.">
+  <meta property="og:url" content="https://metacursion.com/">
+  <meta property="og:image" content="https://metacursion.com/logo.png">
+  <meta property="og:image:width" content="720">
+  <meta property="og:image:height" content="498">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1b2533;
+      --muted: #5b6878;
+      --accent: #1a73c9;
+      --border: #e3e8ef;
+      --shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 8px 24px rgba(16, 24, 40, .06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f141b;
+        --card: #161d26;
+        --text: #e6ebf1;
+        --muted: #9aa7b6;
+        --accent: #6cb8f2;
+        --border: #263140;
+        --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 400 1.0625rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 34rem;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+      padding: clamp(1.25rem, 5vw, 4rem) clamp(1rem, 4vw, 1.5rem);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.25rem, 5vw, 2.5rem);
+    }
+    header { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    header img { width: 168px; height: auto; border-radius: 12px; display: block; }
+    h1 { margin: 0; font-size: 1.75rem; line-height: 1.2; letter-spacing: -.01em; }
+    .location { margin: .25rem 0 0; color: var(--muted); font-size: .95rem; }
+    h2 {
+      margin: 2rem 0 .5rem;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    p { margin: 0 0 .5rem; }
+    ul { margin: 0; padding-left: 1.2rem; }
+    li { margin: .2rem 0; }
+    li::marker { color: var(--muted); }
+    a { color: var(--accent); text-decoration: none; text-underline-offset: 2px; }
+    a:hover, a:focus-visible { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+    .contact {
+      display: inline-block;
+      margin-top: .25rem;
+      padding: .6rem 1.1rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--card);
+      font-weight: 600;
+    }
+    .contact:hover, .contact:focus-visible { text-decoration: none; filter: brightness(1.08); }
+    @media print {
+      body { background: none; }
+      .card { box-shadow: none; border: 0; }
+    }
+  </style>
 </head>
 <body>
-  <header class="slds-global-header_container">
-    <div class="slds-global-header slds-grid slds-grid_align-spread">
-      <div class="slds-global-header__item">
-        <div class="slds-global-header__logo">
-          <img height="100px" src="logo.png" />
+  <main>
+    <div class="card">
+      <header>
+        <img src="logo.png" width="720" height="498" alt="Metacursion logo">
+        <div>
+          <h1>Metacursion</h1>
+          <p class="location">Current location: Auckland, New Zealand</p>
         </div>
-      </div>
-       <div class="slds-p-right_medium">
-        Current location: Auckland, New Zealand
-      </div>
-    </div>
-  </header>
+      </header>
 
-  <div class="main slds-p-top_xx-large slds-container--center slds-grid slds-container--large slds-wrap">
-    <div
-			class="slds-p-top_medium slds-container--center slds-container--small slds-col-pull-padded slds-wrap ">
-    Metacursion is remotely developing:
-    <ul>
-      <li>Advanced Lightning components
-      <li>Domain driven apex
-    </ul>
+      <h2>Remotely developing</h2>
+      <ul>
+        <li>Advanced Lightning components</li>
+        <li>Domain driven Apex</li>
+      </ul>
 
-    Services:
-    <ul>
-      <li>Salesforce consulting
-      <li>Google Cloud consulting
-    </ul>
-    Work:</br>
-      - <a href="https://github.com/metacursion/lightning-translate"> Lightning Translate </a></br>
-      - <a href="https://aminosplore.metacursion.com/"> Aminosplore </a></br>
-      - <a href="https://metacursion.com/lightning-not-hotdog/"> The Original Lightnig Not-Hotdog </a></br>
-      - <a href="https://podlog.metacursion.com/"> Podlog tracks Salesforce's instances' versions </a></br>
-      - <a href="https://github.com/metacursion/CustomMetadataClientSync"> Synchronous Custom Metadata Types service for Lightning components </a></br>
-      - <a href="https://github.com/metacursion/CSPService"> Tiny service for manipulating CSP settings from Lightning </a></br>
-      - <a href="https://github.com/metacursion/CSPService"> Tiny service for manipulating CSP records from Lightning </a></br>
-      - <a href="https://github.com/metacursion/gravalax"> gravalax generates promisified lighting stubs from your apex classes </a></br>
-      - <a href="https://github.com/metacursion/Httpex"> Httpex is a little framework fork that helps to call HTTP endpoints with couple of auth options  </a></br>
-      - <a href="https://github.com/"> HttpSin is WIP framework for calling HTTP from Lightning via Apex(utilising Httpex and sfdc-lax)</a></br>
-      - <a href="https://sjurgis.github.io/lightning-hacker-news/"> Lightning Hacker News - in less than 99 lines of code </a> <a href="https://lhn.metacursion.com/">Demo</a></br>
-      - <a onclick="javascript:alert('Contact info@metacursion.com for a demo')" href="https://www.facebook.com/Metacursion/videos/128143094444590/"> Bi-Directional Google Cloud Pub/Sub with platform events </a></br></br>
+      <h2>Services</h2>
+      <ul>
+        <li>Salesforce consulting</li>
+        <li>Google Cloud consulting</li>
+      </ul>
 
-    <a href="mailto:info@metacursion.com">Contact</a>
+      <h2>Contact</h2>
+      <a class="contact" href="mailto:info@metacursion.com">info@metacursion.com</a>
     </div>
-    </div>
-    <script>
-    if(!document.cookie){
-      document.cookie = 'gac='+(Math.random()*1e32).toString(36)
-    }
-    const gac = new RegExp("gac=([^;]+)").exec(document.cookie)[1]
-    fetch('https://www.google-analytics.com/collect?v=1&tid=UA-101243923-1&t=pageview&cid='+gac+'&dp=home')
-    </script>
+  </main>
+</body>
 </html>
